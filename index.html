@@ -1,13 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
     <title>OxygenShop</title>
 </head>
 <body>
-    
+    <header class="header">
+        <h1 class="header__title">OXYGENShop</h1>
+        <input type="checkbox" name="btn-desplegable" id="btn-desplegable" class="header__btn">
+        <label for="btn-desplegable" class="header__open">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="20" fill="currentColor" class="bi bi-list header__icon" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+              </svg>
+        </label>
+        <label for="btn-desplegable" class="header__close">
+            <span>X</span>
+        </label>
+        <ul class="header__list">
+            <li class="list-item"><a href="#">WHY US</a></li>
+            <li class="list-item"><a href="#">BENEFITS</a></li>
+            <li class="list-item"><a href="#">PRICES</a></li>
+            <li class="list-item"><a href="#">CONTACT</a></li>
+        </ul>
+    </header>
 </body>
 </html>
