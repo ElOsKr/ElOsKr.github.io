@@ -126,6 +126,7 @@ body {
 }
 .stadistics__title, .stadistics__data {
   margin: 20px 0;
+  padding-bottom: 20px;
 }
 .stadistics__title {
   font-weight: 300;
@@ -164,4 +165,43 @@ body {
   font-weight: 400;
   font-size: 17px;
   color: #A5A5A5;
+}
+
+.cards {
+  color: black;
+  text-align: center;
+}
+
+.card {
+  margin: 20px auto;
+  padding: 30px;
+  background-color: #FFFFFF;
+  width: 85%;
+}
+.card__title, .card__img, .card__description {
+  margin: 30px 0;
+}
+.card__title {
+  font-weight: 400;
+}
+.card__img {
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+  width: 75%;
+  position: relative;
+  z-index: 10;
+}
+.card__description {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+}
+.card__circle {
+  position: absolute;
+  background-color: #FB3B64;
+  border-radius: 50%;
+  width: 25vw;
+  height: 25vw;
+  right: 25%;
+  z-index: 1;
 }/*# sourceMappingURL=main.css.map */
