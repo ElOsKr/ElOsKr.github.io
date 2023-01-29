@@ -8,49 +8,62 @@ $main-color:#08A6E4;
     box-sizing: border-box;
 }
 
+body,html{
+    width: 100%;
+    height: 100%;
+}
 
 body{
     font-family: $main-font;
     color:$main-color;
     min-width: 320px;
     text-align: center;
+    background-color: #F7F7F7;
 }
 
 .header{
-    padding: 30px 2%;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    padding: 20px 10px;
     box-shadow:0px 1px 10px rgb(106, 106, 106);
+    background-color: white
 }
 
 .header__title{
     font-weight: 300;
     display: inline-block;
-    margin-right: 20%;
+    margin-right: 10%;
 }
 
 .header__btn{
     display: none;
 }
-.header__btn:checked ~ .header__open{
-        display: none;
-    }
-.header__btn:checked ~ .header__close{
-        display: inline-block;
-        width: 25px;
-        height: 20px;
-        font-weight: bold;
+
+.header__open,.header__close{
+    margin-right: 20px;
 }
 
 .header__close{
     display: none;
 }
 
-.header__btn:checked ~ .header__list{
-    display: block;
-}
+.header__btn:checked{
+    ~ .header__open{
+        display: none;
+    }
+    
+    ~ .header__close{
+        display: inline-block;
+        width: 25px;
+        height: 20px;
+        font-weight: bold;
+    }
 
-.header__btn:checked ~ .header{
-    height: auto;
-}
+    ~ .header__list{
+        display: block;
+    }
+} 
 
 .header__list{
     margin-top: 20px;
@@ -72,11 +85,50 @@ body{
       font-size: 12px;
       line-height: 15px;
       margin-left: 5%;
-    }
-    a:visited{
-        color: $primary-color;
-    }
-    a:hover{
-        color:$secondary-color;
+
+        &:visited{
+            color: $primary-color;
+        }
+
+        &:hover{
+            color:$secondary-color;
+        }
     }
 }
+
+.content{
+    position: relative;
+    z-index: 1;
+    padding-top: 100px;
+    background-color:white ;
+    color: black;
+    font-size: 16px;
+    
+}
+
+
+.introduction__title, .introduction__description, .introduction__btn{
+    margin: 20px 0;
+}
+
+
+.introduction__title{
+    font-weight: 400;
+}
+
+.introduction__btn{
+    border-radius:40px;
+    width: min(80%,500px);
+    padding: 20px 0;
+    color: white;
+    background-color: $main-color;
+    border:none;
+    font-family: $secondary-font;
+    font-weight: 700;
+    box-shadow: 5px 10px 14px rgba(7, 172, 230, 0.29);
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
