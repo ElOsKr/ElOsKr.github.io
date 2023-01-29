@@ -22,57 +22,57 @@ body{
 }
 
 .header{
+    $component:&;
     position: absolute;
     z-index: 10;
     width: 100%;
     padding: 20px 10px;
     box-shadow:0px 1px 10px rgb(106, 106, 106);
-    background-color: white
-}
+    background-color: white;
 
-.header__title{
-    font-weight: 300;
-    display: inline-block;
-    margin-right: 10%;
-}
+    &__title{
+        font-weight: 300;
+        display: inline-block;
+        margin-right: 10%;
+    }
 
-.header__btn{
-    display: none;
-}
-
-.header__open,.header__close{
-    margin-right: 20px;
-}
-
-.header__close{
-    display: none;
-}
-
-.header__btn:checked{
-    ~ .header__open{
+    &__btn{
         display: none;
     }
+
+    &__open, &__close{
+        margin-right: 20px;
+    }
+
+    &__close{
+        display: none;
+    }
+
+    &__btn:checked{
+        ~ #{$component}__open{
+            display: none;
+        }
+        
+        ~ #{$component}__close{
+            display: inline-block;
+            width: 25px;
+            height: 20px;
+            font-weight: bold;
+        }
     
-    ~ .header__close{
-        display: inline-block;
-        width: 25px;
-        height: 20px;
-        font-weight: bold;
-    }
+        ~ #{$component}__list{
+            display: block;
+        }
+    } 
 
-    ~ .header__list{
-        display: block;
+    &__list{
+        margin-top: 20px;
+        display: none;
+        text-align: left;   
+        font-family: $secondary-font;
+        list-style-type: none;
     }
-} 
-
-.header__list{
-    margin-top: 20px;
-    display: none;
-    text-align: left;   
-    font-family: $secondary-font;
-    list-style-type: none;
 }
-
 
 .list-item{
     $primary-color:grey;
@@ -106,29 +106,40 @@ body{
     
 }
 
+.introduction{
 
-.introduction__title, .introduction__description, .introduction__btn{
-    margin: 20px 0;
-}
+    &__title, &__description, &__btn{
+        margin: 20px 0;
+    }
 
+    &__title{
+        font-weight: 400;
+    }
 
-.introduction__title{
-    font-weight: 400;
-}
+    &__btn{
+        border-radius:40px;
+        width: min(80%,500px);
+        padding: 20px 0;
+        color: white;
+        background-color: $main-color;
+        border:none;
+        font-family: $secondary-font;
+        font-weight: 700;
+        box-shadow: 5px 10px 14px rgba(7, 172, 230, 0.29);
+    
+        &:hover{
+            cursor: pointer;
+        }
+    }
 
-.introduction__btn{
-    border-radius:40px;
-    width: min(80%,500px);
-    padding: 20px 0;
-    color: white;
-    background-color: $main-color;
-    border:none;
-    font-family: $secondary-font;
-    font-weight: 700;
-    box-shadow: 5px 10px 14px rgba(7, 172, 230, 0.29);
-
-    &:hover{
-        cursor: pointer;
+    &__img{
+        object-fit: cover;
+        width: 100%;
+        min-height: 250px;
+        max-height: 600px;
     }
 }
+
+
+
 
