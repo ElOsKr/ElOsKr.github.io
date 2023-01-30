@@ -256,7 +256,8 @@ body{
             object-fit:scale-down;
             width: 75%;
             position: relative;
-            z-index: 10;            
+            z-index: 10;     
+            left: 10%;       
         }
 
         &.img__phone{
@@ -290,7 +291,7 @@ body{
         height: calc(100vw/4);
         min-width: calc($min-width/4);
         min-height: calc($min-width/4);
-        right: 30%;
+        right: 25%;
         z-index: 1;
     }
         
