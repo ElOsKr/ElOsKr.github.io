@@ -290,7 +290,7 @@ body{
         height: calc(100vw/4);
         min-width: calc($min-width/4);
         min-height: calc($min-width/4);
-        right: 25%;
+        right: 30%;
         z-index: 1;
     }
         
@@ -518,7 +518,32 @@ body{
 
 }
 
-footer{
+.footer{
     padding-top: 20px;
+    padding-bottom: 20px;
+
+    &__text{
+        display: inline-block;
+        width: 60%;
+
+    }
+    &__title{
+        font-family: $main-font;
+        font-weight: 300;
+        margin-right: 10%;
+    }
+
+    &__rights{
+        font-family: $secondary-font;
+        color: #A5A5A5;
+        font-size: 11px;
+
+    }
+
+    &__icons{
+        display: inline-block;
+        margin-right: 10%;
+    }
+
 }
 

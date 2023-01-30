@@ -230,7 +230,7 @@ body {
   height: 25vw;
   min-width: 80px;
   min-height: 80px;
-  right: 25%;
+  right: 30%;
   z-index: 1;
 }
 .card__phone {
@@ -423,6 +423,25 @@ body {
   margin-bottom: 30px;
 }
 
-footer {
+.footer {
   padding-top: 20px;
+  padding-bottom: 20px;
+}
+.footer__text {
+  display: inline-block;
+  width: 60%;
+}
+.footer__title {
+  font-family: Raleway, sans-serif;
+  font-weight: 300;
+  margin-right: 10%;
+}
+.footer__rights {
+  font-family: "Open Sans", sans-serif;
+  color: #A5A5A5;
+  font-size: 11px;
+}
+.footer__icons {
+  display: inline-block;
+  margin-right: 10%;
 }/*# sourceMappingURL=main.css.map */
