@@ -1,65 +1,90 @@
 $main-font: Raleway, sans-serif;
 $secondary-font: 'Open Sans',sans-serif;
 $main-color:#08A6E4;
-
+$color-1:#FB3B64;
+$color-2:$main-color;
+$color-3:#55DFB4;
+$min-width:320px;
 * { 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar{
+    width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+body,html{
+    width: 100%;
+    height: 100%;
+}
 
 body{
     font-family: $main-font;
     color:$main-color;
-    min-width: 320px;
+    min-width: $min-width;
     text-align: center;
+    background-color: #E8E9ED;
+    overflow-x: hidden;
 }
 
 .header{
-    padding: 30px 2%;
+    $component:&;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    padding: 20px 10px;
     box-shadow:0px 1px 10px rgb(106, 106, 106);
-}
+    background-color: #FFFFFF;
 
-.header__title{
-    font-weight: 300;
-    display: inline-block;
-    margin-right: 20%;
-}
+    &__title{
+        font-weight: 300;
+        display: inline-block;
+        margin-right: 10%;
+    }
 
-.header__btn{
-    display: none;
-}
-.header__btn:checked ~ .header__open{
+    &__btn{
         display: none;
     }
-.header__btn:checked ~ .header__close{
-        display: inline-block;
-        width: 25px;
-        height: 20px;
-        font-weight: bold;
-}
 
-.header__close{
-    display: none;
-}
+    &__open, &__close{
+        margin-right: 20px;
+    }
 
-.header__btn:checked ~ .header__list{
-    display: block;
-}
+    &__close{
+        display: none;
+    }
 
-.header__btn:checked ~ .header{
-    height: auto;
-}
+    &__btn:checked{
+        ~ #{$component}__open{
+            display: none;
+        }
+        
+        ~ #{$component}__close{
+            display: inline-block;
+            width: 25px;
+            height: 20px;
+            font-weight: bold;
+        }
+    
+        ~ #{$component}__list{
+            display: block;
+        }
+    } 
 
-.header__list{
-    margin-top: 20px;
-    display: none;
-    text-align: left;   
-    font-family: $secondary-font;
-    list-style-type: none;
+    &__list{
+        margin-top: 20px;
+        display: none;
+        text-align: left;   
+        font-family: $secondary-font;
+        list-style-type: none;
+    }
 }
-
 
 .list-item{
     $primary-color:grey;
@@ -72,11 +97,454 @@ body{
       font-size: 12px;
       line-height: 15px;
       margin-left: 5%;
-    }
-    a:visited{
-        color: $primary-color;
-    }
-    a:hover{
-        color:$secondary-color;
+
+        &:visited{
+            color: $primary-color;
+        }
+
+        &:hover{
+            color:$secondary-color;
+        }
     }
 }
+
+.content{
+    position: relative;
+    z-index: 1;
+    padding-top: 100px;
+    background-color:white ;
+    color: black;
+    font-size: 16px;
+    
+}
+
+.introduction__btn, .form__btn{
+        border-radius:40px;
+        width: min(80%,500px);
+        padding: 20px 0;
+        color: white;
+        background-color: $main-color;
+        border:none;
+        font-family: $secondary-font;
+        font-weight: 700;
+        box-shadow: 5px 10px 14px rgba(7, 172, 230, 0.29);
+    
+        &:hover{
+            cursor: pointer;
+        }    
+}
+
+
+.introduction{
+
+    &__title, &__description, &__btn{
+        margin: 20px 0;
+    }
+
+    &__title{
+        font-weight: 400;
+    }
+
+    
+
+
+    &__img{
+        object-fit: cover;
+        width: 100%;
+        min-height: 250px;
+        max-height: 600px;
+    }
+
+}
+
+.stadistics{
+
+
+    width: 100%;
+    
+    &__title, &__data{
+        margin: 20px 0;
+        padding-bottom: 20px;
+    }
+
+
+    &__title{
+        font-weight: 300;
+    }
+    
+}
+
+.color-1{
+    background-color: $color-1;
+}
+
+.color-2{
+    background-color: $color-2;
+}
+
+.color-3{
+    background-color: $color-3;
+}
+
+.textColor-1{
+    color: $color-1;
+}
+
+.textColor-2{
+    color: $color-2;
+}
+
+.textColor-3{
+    color: $color-3;
+}
+
+
+.data{
+
+    
+    &__circle{
+        display: inline-block;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        
+    }
+
+    &__icon{
+        position: absolute;
+    }
+
+    &__number{
+        font-family: $main-font;
+        font-weight: 800;
+        letter-spacing: 6px;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    &__title{
+        font-family: $main-font;
+        font-weight: 400;
+        font-size: 17px;
+        color: #A5A5A5;
+    }
+    
+}
+
+.cards{
+    color: black;
+    text-align: center;
+}
+
+.card{
+    text-align: left;
+    margin: 20px auto ;
+    padding: 30px;
+    background-color: #FFFFFF;
+    width: 85%;
+    
+    &__title, &__img, &__description{
+        margin:30px 0;
+    }
+
+    &__title{
+        font-weight: 400;
+    }
+
+    &__img{
+        &.img__macbook{
+            object-fit:scale-down;
+            width: 75%;
+            position: relative;
+            z-index: 10;     
+            left: 10%;       
+        }
+
+        &.img__phone{
+            max-width: 100%;
+            margin: auto;
+            position: absolute;
+            width: calc(100vw/2);
+            height: calc(100vw/3);
+            max-width: 100%;
+            max-height: 100%;
+            min-width: calc($min-width/2);
+            min-height: calc($min-width/3);;
+            left: 30%;
+        }
+
+    }
+
+    
+
+    &__description{
+        font-family: $secondary-font;
+        font-size: 14px;
+        line-height: 21px;
+    }
+
+    &__macbook{
+        position: absolute;
+        background-color: $color-1;
+        border-radius: 50%;
+        width: calc(100vw/4);
+        height: calc(100vw/4);
+        min-width: calc($min-width/4);
+        min-height: calc($min-width/4);
+        right: 25%;
+        z-index: 1;
+    }
+        
+    &__phone{
+        background-color: $color-2;
+        border-radius: 50%;
+        width: calc(100vw/3);
+        height: calc(100vw/3);
+        min-width: calc($min-width/3);
+        min-height: calc($min-width/3);
+        margin:0 auto;
+    }
+
+    &__trumpet{
+        background-color: $color-3;
+        width: calc(100% + 60px);
+        margin-left: -30px;
+        margin-bottom: -30px;
+        text-align: center;
+        .img__trumpet{
+            margin: 5% auto -5% auto;
+            transform: scale(0.8, 0.8);
+        }
+    }
+    
+
+}
+
+.plans{
+    background-color: #FFFFFF;
+    padding-top: 30px;
+    color: #000000;
+    &__basic, &__professional, &__premium{
+        width: 80%;
+        border:1px solid;
+        border-radius: 18px;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+
+    &__basic:hover, &__professional:hover, &__premium:hover{
+        transform: scale(1.07, 1.07);
+        border:1px solid;
+        border-radius: 18px;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+
+    &__basic{
+        border-color: $color-1;
+        &:hover{
+            border-color: $color-1;
+            box-shadow: 5px 10px 27px $color-1;
+        }
+    }
+    
+    &__professional{
+        border-color: $color-2;
+        &:hover{
+            border-color: $color-2;
+            box-shadow: 5px 10px 27px $color-2;
+        }
+    }
+
+    &__premium, &__premium:hover{
+        border-color: $color-3;
+        &:hover{
+            border-color: $color-3;
+            box-shadow: 5px 10px 27px $color-3;
+        }
+    }
+
+
+    &__title{
+        font-family: $main-font;
+        font-weight: 400;
+    }
+}
+
+.plan{
+    &__pricing{
+        text-align: center;
+        width: 45%;
+    }
+
+    &__table{
+        width: 100%;
+        margin-bottom: -10px;
+    }
+    &__title{
+        font-family: $main-font;
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    &__cost{
+        font-family: $secondary-font;
+        font-weight: 300;
+        font-size: 46px;
+    }
+    
+    &__limited{
+        font-family: $main-font;
+        font-size: 12px;
+        font-weight: 700;
+    }
+
+    &__status{
+        width: 5%;
+        font-size: 10px;
+    }
+
+    &__check{
+        border:1px solid #55DFB4;
+        text-align: center;
+        color:#55DFB4;
+    }
+
+    &__cross{
+        border:1px solid $color-1;
+        text-align: center;
+        color:$color-1;
+        padding: 0 2px;
+    }
+
+    &__description{
+        font-family: $secondary-font;
+        font-size: 14px;
+        margin:10px 0px;
+        width: 100%;
+        text-align: left;
+    }
+
+    &__btn{
+        position: relative;
+        top: 15px;
+        border:none;
+        border-radius: 23px;
+        width: 50%;
+        padding: 12px 0;
+    }
+}
+
+.questions{
+    background-color: #FFFFFF;
+    padding-top: 50px;
+    
+    &__title{
+        color: #000000;
+        font-family: $main-font;
+        font-weight: 400;
+    }
+
+    &__description{
+        margin-top: 10px;
+        color: #000000;
+        font-size: 16px;
+        font-family: $secondary-font;
+    }
+
+    &__contact{
+        margin-left: 10%;
+        text-align: left;
+        margin-top: 20px;
+    }
+}
+
+.contact{
+    &__mail,&__number{
+        margin-top: 10px;
+        span{
+            color:#A5A5A5;
+        }
+    }
+
+    &__number{
+        font-family: $secondary-font;
+    }
+
+    &__form{
+        margin-top: 30px;
+
+        p{
+            text-align: start;
+        }
+        .form__username, .form_useremail{
+            font-size: 11px;
+            font-family: $secondary-font;
+            letter-spacing: 3.3px;
+        }
+
+        #username,#useremail{
+            margin: 20px 0;
+            border:none;
+            border-bottom: 1px solid #95989A;
+            width: 80%;
+        }
+
+        .form__check{
+            margin:20px 0;
+        }
+
+        #formcheck{
+            position: relative;
+            vertical-align: top;
+            width: 20px;
+            height: 20px;
+        }
+
+        span{
+            display: inline-block;
+            color: #707070;
+            font-family: $secondary-font;
+            size: 12px;
+            line-height: 16px;
+            width: 80%;
+        }
+
+        .form__btn{
+            margin-left: 30%;
+            width: min(50%,300px);
+            margin-bottom: 30px;
+        }
+    }
+
+}
+
+.footer{
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    &__text{
+        display: inline-block;
+        width: 60%;
+
+    }
+    &__title{
+        font-family: $main-font;
+        font-weight: 300;
+        margin-right: 10%;
+    }
+
+    &__rights{
+        font-family: $secondary-font;
+        color: #A5A5A5;
+        font-size: 11px;
+
+    }
+
+    &__icons{
+        display: inline-block;
+        margin-right: 10%;
+    }
+
+}
+
