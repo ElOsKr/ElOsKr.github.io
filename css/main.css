@@ -173,6 +173,7 @@ body {
 }
 
 .card {
+  text-align: left;
   margin: 20px auto;
   padding: 30px;
   background-color: #FFFFFF;
@@ -184,24 +185,83 @@ body {
 .card__title {
   font-weight: 400;
 }
-.card__img {
+.card__img.img__macbook {
   -o-object-fit: scale-down;
      object-fit: scale-down;
   width: 75%;
   position: relative;
   z-index: 10;
 }
+.card__img.img__phone {
+  max-width: 100%;
+  margin: auto;
+  position: absolute;
+  width: 50vw;
+  height: 33.3333333333vw;
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 160px;
+  min-height: 106.6666666667px;
+  left: 30%;
+}
 .card__description {
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 21px;
 }
-.card__circle {
+.card__macbook {
   position: absolute;
   background-color: #FB3B64;
   border-radius: 50%;
   width: 25vw;
   height: 25vw;
+  min-width: 80px;
+  min-height: 80px;
   right: 25%;
   z-index: 1;
+}
+.card__phone {
+  background-color: #08A6E4;
+  border-radius: 50%;
+  width: 33.3333333333vw;
+  height: 33.3333333333vw;
+  min-width: 106.6666666667px;
+  min-height: 106.6666666667px;
+  margin: 0 auto;
+}
+.card__trumpet {
+  background-color: #55DFB4;
+  width: calc(100% + 60px);
+  margin-left: -30px;
+  margin-bottom: -30px;
+  text-align: center;
+}
+.card__trumpet .img__trumpet {
+  margin: 5% auto -5% auto;
+  transform: scale(0.8, 0.8);
+}
+
+.plans {
+  background-color: #FFFFFF;
+  padding-top: 30px;
+}
+.plans__basic {
+  width: 80%;
+  background-color: #08A6E4;
+  margin: 0 auto;
+}
+.plans__title {
+  font-family: Raleway, sans-serif;
+  font-weight: 400;
+}
+
+.plan__price {
+  display: inline-block;
+  width: 40%;
+  height: 100%;
+  margin: 0 auto;
+}
+.plan__description {
+  display: inline-block;
+  width: 40%;
 }/*# sourceMappingURL=main.css.map */

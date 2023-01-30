@@ -4,7 +4,7 @@ $main-color:#08A6E4;
 $color-1:#FB3B64;
 $color-2:#08A6E4;
 $color-3:#55DFB4;
-
+$min-width:320px;
 * { 
     margin: 0;
     padding: 0;
@@ -27,7 +27,7 @@ body,html{
 body{
     font-family: $main-font;
     color:$main-color;
-    min-width: 320px;
+    min-width: $min-width;
     text-align: center;
     background-color: #E8E9ED;
     overflow-x: hidden;
@@ -219,6 +219,7 @@ body{
 }
 
 .card{
+    text-align: left;
     margin: 20px auto ;
     padding: 30px;
     background-color: #FFFFFF;
@@ -233,11 +234,29 @@ body{
     }
 
     &__img{
-        object-fit:scale-down;
-        width: 75%;
-        position: relative;
-        z-index: 10;
+        &.img__macbook{
+            object-fit:scale-down;
+            width: 75%;
+            position: relative;
+            z-index: 10;            
+        }
+
+        &.img__phone{
+            max-width: 100%;
+            margin: auto;
+            position: absolute;
+            width: calc(100vw/2);
+            height: calc(100vw/3);
+            max-width: 100%;
+            max-height: 100%;
+            min-width: calc($min-width/2);
+            min-height: calc($min-width/3);;
+            left: 30%;
+        }
+
     }
+
+    
 
     &__description{
         font-family: $secondary-font;
@@ -245,16 +264,71 @@ body{
         line-height: 21px;
     }
 
-    &__circle{
+    &__macbook{
         position: absolute;
-        background-color: #FB3B64;
+        background-color: $color-1;
         border-radius: 50%;
         width: calc(100vw/4);
         height: calc(100vw/4);
+        min-width: calc($min-width/4);
+        min-height: calc($min-width/4);
         right: 25%;
         z-index: 1;
     }
+        
+    &__phone{
+        background-color: $color-2;
+        border-radius: 50%;
+        width: calc(100vw/3);
+        height: calc(100vw/3);
+        min-width: calc($min-width/3);
+        min-height: calc($min-width/3);
+        margin:0 auto;
+    }
+
+    &__trumpet{
+        background-color: $color-3;
+        width: calc(100% + 60px);
+        margin-left: -30px;
+        margin-bottom: -30px;
+        text-align: center;
+        .img__trumpet{
+            margin: 5% auto -5% auto;
+            transform: scale(0.8, 0.8);
+        }
+    }
+    
 
 }
 
+.plans{
+    background-color: #FFFFFF;
+    padding-top: 30px;
+
+    &__basic{
+        width: 80%;
+        background-color: #08A6E4;
+        margin: 0 auto;
+    }
+
+
+    &__title{
+        font-family: $main-font;
+        font-weight: 400;
+    }
+}
+
+.plan{
+    &__price{
+        display: inline-block;
+        width: 40%;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    &__description{
+        display: inline-block;
+        width: 40%;
+    }
+}
 
