@@ -2,7 +2,7 @@ $main-font: Raleway, sans-serif;
 $secondary-font: 'Open Sans',sans-serif;
 $main-color:#08A6E4;
 $color-1:#FB3B64;
-$color-2:#08A6E4;
+$color-2:$main-color;
 $color-3:#55DFB4;
 $min-width:320px;
 * { 
@@ -118,17 +118,7 @@ body{
     
 }
 
-.introduction{
-
-    &__title, &__description, &__btn{
-        margin: 20px 0;
-    }
-
-    &__title{
-        font-weight: 400;
-    }
-
-    &__btn{
+.introduction__btn, .form__btn{
         border-radius:40px;
         width: min(80%,500px);
         padding: 20px 0;
@@ -141,8 +131,22 @@ body{
     
         &:hover{
             cursor: pointer;
-        }
+        }    
+}
+
+
+.introduction{
+
+    &__title, &__description, &__btn{
+        margin: 20px 0;
     }
+
+    &__title{
+        font-weight: 400;
+    }
+
+    
+
 
     &__img{
         object-fit: cover;
@@ -150,6 +154,7 @@ body{
         min-height: 250px;
         max-height: 600px;
     }
+
 }
 
 .stadistics{
@@ -427,5 +432,93 @@ body{
         width: 50%;
         padding: 12px 0;
     }
+}
+
+.questions{
+    background-color: #FFFFFF;
+    padding-top: 50px;
+    
+    &__title{
+        color: #000000;
+        font-family: $main-font;
+        font-weight: 400;
+    }
+
+    &__description{
+        margin-top: 10px;
+        color: #000000;
+        font-size: 16px;
+        font-family: $secondary-font;
+    }
+
+    &__contact{
+        margin-left: 10%;
+        text-align: left;
+        margin-top: 20px;
+    }
+}
+
+.contact{
+    &__mail,&__number{
+        margin-top: 10px;
+        span{
+            color:#A5A5A5;
+        }
+    }
+
+    &__number{
+        font-family: $secondary-font;
+    }
+
+    &__form{
+        margin-top: 30px;
+
+        p{
+            text-align: start;
+        }
+        .form__username, .form_useremail{
+            font-size: 11px;
+            font-family: $secondary-font;
+            letter-spacing: 3.3px;
+        }
+
+        #username,#useremail{
+            margin: 20px 0;
+            border:none;
+            border-bottom: 1px solid #95989A;
+            width: 80%;
+        }
+
+        .form__check{
+            margin:20px 0;
+        }
+
+        #formcheck{
+            position: relative;
+            vertical-align: top;
+            width: 20px;
+            height: 20px;
+        }
+
+        span{
+            display: inline-block;
+            color: #707070;
+            font-family: $secondary-font;
+            size: 12px;
+            line-height: 16px;
+            width: 80%;
+        }
+
+        .form__btn{
+            margin-left: 30%;
+            width: min(50%,300px);
+            margin-bottom: 30px;
+        }
+    }
+
+}
+
+footer{
+    padding-top: 20px;
 }
 
