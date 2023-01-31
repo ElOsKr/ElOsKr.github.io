@@ -574,7 +574,7 @@ body {
     margin-bottom: 20px;
   }
   .cards .card:nth-child(3) .card__description {
-    padding-bottom: 30px;
+    padding-bottom: 10%;
     border-bottom: 2px solid #55DFB4;
   }
   .cards .card__trumpet {
