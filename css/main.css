@@ -187,7 +187,7 @@ body {
 
 .card {
   text-align: left;
-  margin: 20px auto;
+  margin: 20px auto 0px auto;
   padding: 30px;
   background-color: #FFFFFF;
   width: 85%;
@@ -243,11 +243,11 @@ body {
   min-height: 106.6666666667px;
   margin: 0 auto;
 }
+
 .card__trumpet {
   background-color: #55DFB4;
-  width: calc(100% + 60px);
-  margin-left: -30px;
-  margin-bottom: -30px;
+  width: 85%;
+  margin: 0 auto 20px auto;
   text-align: center;
 }
 .card__trumpet .img__trumpet {
@@ -266,6 +266,8 @@ body {
   border-radius: 18px;
   margin: 0 auto;
   margin-top: 30px;
+  padding: 20px 10px;
+  display: table;
 }
 .plans__basic:hover, .plans__professional:hover, .plans__premium:hover {
   transform: scale(1.07, 1.07);
@@ -276,6 +278,9 @@ body {
 }
 .plans__basic {
   border-color: #FB3B64;
+}
+.plans__basic .plan__pricing .plan__limited {
+  visibility: hidden;
 }
 .plans__basic:hover {
   border-color: #FB3B64;
@@ -301,12 +306,15 @@ body {
 }
 
 .plan__pricing {
-  text-align: center;
-  width: 45%;
+  display: table-cell;
+  width: 40%;
 }
-.plan__table {
-  width: 100%;
-  margin-bottom: -10px;
+.plan__pricing div {
+  transform: translate(0, 40%);
+}
+.plan__data {
+  display: table-cell;
+  padding-left: 10%;
 }
 .plan__title {
   font-family: Raleway, sans-serif;
@@ -323,20 +331,18 @@ body {
   font-size: 12px;
   font-weight: 700;
 }
-.plan__status {
-  width: 5%;
-  font-size: 10px;
-}
 .plan__check {
   border: 1px solid #55DFB4;
   text-align: center;
   color: #55DFB4;
+  margin-right: 5px;
 }
 .plan__cross {
   border: 1px solid #FB3B64;
   text-align: center;
   color: #FB3B64;
-  padding: 0 2px;
+  padding: 0 1px;
+  margin-right: 5px;
 }
 .plan__description {
   font-family: "Open Sans", sans-serif;
@@ -346,12 +352,13 @@ body {
   text-align: left;
 }
 .plan__btn {
-  position: relative;
-  top: 15px;
+  position: absolute;
+  left: 25%;
   border: none;
   border-radius: 23px;
   width: 50%;
   padding: 12px 0;
+  top: 96%;
 }
 
 .questions {
@@ -374,13 +381,15 @@ body {
   text-align: left;
   margin-top: 20px;
 }
-
-.contact__mail, .contact__number {
-  margin-top: 10px;
+.questions__mail, .questions__number {
+  margin-left: 10%;
+  margin-top: 20px;
+  text-align: start;
 }
-.contact__mail span, .contact__number span {
+.questions__mail span, .questions__number span {
   color: #A5A5A5;
 }
+
 .contact__number {
   font-family: "Open Sans", sans-serif;
 }
@@ -427,6 +436,7 @@ body {
 .footer {
   padding-top: 20px;
   padding-bottom: 20px;
+  box-shadow: 0px -5px 40px rgba(0, 0, 0, 0.2);
 }
 .footer__text {
   display: inline-block;
@@ -490,11 +500,23 @@ body {
     flex: 1;
   }
   .cards {
-    padding: 0 10%;
+    display: grid;
+    grid-template: 1fr 1fr 1fr/1fr 1fr 1fr;
+    padding: 25px 10%;
+    align-content: center;
+    -moz-column-gap: 5%;
+         column-gap: 5%;
+  }
+  .cards .card:nth-child(1), .cards .card:nth-child(2), .cards .card:nth-child(3), .cards .card__trumpet {
+    width: 100%;
+    margin: 25px auto;
   }
   .cards .card:nth-child(1) {
+    grid-area: 1/1/2/4;
     display: grid;
-    grid-template: 2/2;
+    grid-template: 1fr 1fr/1fr 1fr;
+    -moz-column-gap: 15%;
+         column-gap: 15%;
   }
   .cards .card:nth-child(1) .img__macbook {
     grid-area: 1/2/3/3;
@@ -503,7 +525,7 @@ body {
     grid-area: 1/2/3/3;
     width: 100px;
     height: 100px;
-    right: 22%;
+    right: 15%;
     border-radius: 20px;
     transform: rotate(60deg);
   }
@@ -518,19 +540,22 @@ body {
     margin: 5px 0;
   }
   .cards .card:nth-child(2) {
+    grid-area: 2/1/3/4;
     display: grid;
-    grid-template: 2/2;
+    grid-template: 1fr 2fr/1fr 2fr;
+    -moz-column-gap: 25%;
+         column-gap: 25%;
+    align-content: center;
   }
   .cards .card:nth-child(2) .img__phone {
-    grid-area: 1/1/3/2;
-    width: 20%;
-    height: 20%;
+    width: 250px;
+    height: 200px;
+    left: 15%;
   }
   .cards .card:nth-child(2) .card__phone {
-    grid-area: 1/2/3/2;
-    width: 100px;
-    height: 100px;
-    right: 22%;
+    grid-area: 1/1/3/2;
+    width: 200px;
+    height: 200px;
   }
   .cards .card:nth-child(2) .card__title {
     grid-area: 1/2/2/3;
@@ -541,5 +566,75 @@ body {
   }
   .cards .card:nth-child(2) .card__title, .cards .card:nth-child(2) .card__description {
     margin: 5px 0;
+  }
+  .cards .card:nth-child(3) {
+    grid-area: 3/1/4/3;
+    margin-bottom: 20px;
+  }
+  .cards .card:nth-child(3) .card__description {
+    padding-bottom: 30px;
+    border-bottom: 2px solid #55DFB4;
+  }
+  .cards .card__trumpet {
+    grid-area: 3/3/3/4;
+    margin: 25px auto 20px auto;
+  }
+  .cards .card__trumpet .img__trumpet {
+    margin: 15% auto 0 auto;
+  }
+  .plans {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 10%;
+  }
+  .plans__title {
+    width: 100%;
+  }
+  .plans__basic, .plans__professional, .plans__premium {
+    padding: 50px 0;
+    width: 30%;
+  }
+  .plans__basic .plan__pricing, .plans__professional .plan__pricing, .plans__premium .plan__pricing {
+    display: table-row;
+  }
+  .plans__basic .plan__pricing div, .plans__professional .plan__pricing div, .plans__premium .plan__pricing div {
+    transform: translate(0, 0);
+  }
+  .plans__basic .plan__data, .plans__professional .plan__data, .plans__premium .plan__data {
+    margin: 20% 0 20% 20%;
+    display: block;
+    margin-left: 20%;
+  }
+  .plans .plan__btn {
+    top: 96%;
+  }
+  .questions {
+    padding: 50px 10%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 3fr;
+    grid-template-rows: 1fr 1fr 3fr;
+    justify-items: center;
+  }
+  .questions__title {
+    grid-area: 1/1/2/3;
+    align-self: flex-end;
+  }
+  .questions__description {
+    grid-area: 2/1/3/3;
+  }
+  .questions__mail {
+    grid-area: 3/1/4/2;
+  }
+  .questions__number {
+    grid-area: 3/2/4/3;
+    justify-self: flex-start;
+  }
+  .questions__contact {
+    grid-area: 1/3/4/4;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
   }
 }/*# sourceMappingURL=main.css.map */
