@@ -191,6 +191,7 @@ body{
 
 .data{
     &__circle{
+        position: relative;
         display: inline-block;
         border-radius: 50%;
         width: 60px;
@@ -199,6 +200,8 @@ body{
 
     &__icon{
         position: absolute;
+        top: 9px;
+        right: -20px;
     }
 
     &__number{
