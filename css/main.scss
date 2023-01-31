@@ -5,6 +5,31 @@ $color-1:#FB3B64;
 $color-2:$main-color;
 $color-3:#55DFB4;
 $min-width:320px;
+
+.color-1{
+    background-color: $color-1;
+}
+
+.color-2{
+    background-color: $color-2;
+}
+
+.color-3{
+    background-color: $color-3;
+}
+
+.textColor-1{
+    color: $color-1;
+}
+
+.textColor-2{
+    color: $color-2;
+}
+
+.textColor-3{
+    color: $color-3;
+}
+
 * { 
     margin: 0;
     padding: 0;
@@ -119,24 +144,22 @@ body{
 }
 
 .introduction__btn, .form__btn{
-        border-radius:40px;
-        width: min(80%,500px);
-        padding: 20px 0;
-        color: white;
-        background-color: $main-color;
-        border:none;
-        font-family: $secondary-font;
-        font-weight: 700;
-        box-shadow: 5px 10px 14px rgba(7, 172, 230, 0.29);
-    
-        &:hover{
-            cursor: pointer;
-        }    
+    border-radius:40px;
+    width: min(80%,500px);
+    padding: 20px 0;
+    color: white;
+    background-color: $main-color;
+    border:none;
+    font-family: $secondary-font;
+    font-weight: 700;
+    box-shadow: 5px 10px 14px rgba(7, 172, 230, 0.29);
+
+    &:hover{
+        cursor: pointer;
+    }    
 }
 
-
 .introduction{
-
     &__title, &__description, &__btn{
         margin: 20px 0;
     }
@@ -145,21 +168,15 @@ body{
         font-weight: 400;
     }
 
-    
-
-
     &__img{
         object-fit: cover;
         width: 100%;
         min-height: 250px;
         max-height: 600px;
     }
-
 }
 
 .stadistics{
-
-
     width: 100%;
     
     &__title, &__data{
@@ -167,47 +184,17 @@ body{
         padding-bottom: 20px;
     }
 
-
     &__title{
         font-weight: 300;
-    }
-    
+    }    
 }
-
-.color-1{
-    background-color: $color-1;
-}
-
-.color-2{
-    background-color: $color-2;
-}
-
-.color-3{
-    background-color: $color-3;
-}
-
-.textColor-1{
-    color: $color-1;
-}
-
-.textColor-2{
-    color: $color-2;
-}
-
-.textColor-3{
-    color: $color-3;
-}
-
 
 .data{
-
-    
     &__circle{
         display: inline-block;
         border-radius: 50%;
         width: 60px;
-        height: 60px;
-        
+        height: 60px;  
     }
 
     &__icon{
@@ -228,7 +215,6 @@ body{
         font-size: 17px;
         color: #A5A5A5;
     }
-    
 }
 
 .cards{
@@ -272,10 +258,7 @@ body{
             min-height: calc($min-width/3);;
             left: 30%;
         }
-
     }
-
-    
 
     &__description{
         font-family: $secondary-font;
@@ -305,6 +288,7 @@ body{
         margin:0 auto;
     }
 }
+
 .card__trumpet{
     background-color: $color-3;
     width: 85%;
@@ -321,6 +305,7 @@ body{
     padding-top: 30px;
     color: #000000;
     &__basic, &__professional, &__premium{
+        position: relative;
         width: 80%;
         border:1px solid;
         border-radius: 18px;
@@ -364,7 +349,6 @@ body{
             box-shadow: 5px 10px 27px $color-3;
         }
     }
-
 
     &__title{
         font-family: $main-font;
@@ -428,13 +412,14 @@ body{
     }
 
     &__btn{
+        color: #FFFFFF;
         position: absolute;
         left: 25%;
         border:none;
         border-radius: 23px;
         width: 50%;
         padding: 12px 0;
-        top: 96%;
+        top: 90%;
     }
 }
 
@@ -472,7 +457,6 @@ body{
 }
 
 .contact{
-
     &__number{
         font-family: $secondary-font;
     }
@@ -555,7 +539,6 @@ body{
 }
 
 @media only screen and (min-width: 1000px) {
-
     .header{
         position: relative;
         display: flex;
@@ -708,7 +691,7 @@ body{
         }
 
         &__basic,&__professional,&__premium{
-            padding: 50px 0;
+            padding: 5% 0;
             width: 30%;
             .plan__pricing{
                 display: table-row;
@@ -718,13 +701,12 @@ body{
             }
 
             .plan__data{
-                margin: 20% 0 20% 20%;
+                margin: 15% 0 0 15%;
                 display: block;
-                margin-left: 20%;
             }
-        }
-        .plan__btn{
-            top: 96%;
+            .plan__btn{
+                top: 96%;
+            }
         }
     }
 
@@ -760,7 +742,12 @@ body{
     }
 
     .footer{
+        text-align: start;
+        &__icons, &__text{
+           margin:0; 
+        }
+        
         display: flex ;
-        justify-content: space-between;
+        justify-content: space-evenly;
     }
 }

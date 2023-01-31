@@ -1,3 +1,27 @@
+.color-1 {
+  background-color: #FB3B64;
+}
+
+.color-2 {
+  background-color: #08A6E4;
+}
+
+.color-3 {
+  background-color: #55DFB4;
+}
+
+.textColor-1 {
+  color: #FB3B64;
+}
+
+.textColor-2 {
+  color: #08A6E4;
+}
+
+.textColor-3 {
+  color: #55DFB4;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -133,30 +157,6 @@ body {
   font-weight: 300;
 }
 
-.color-1 {
-  background-color: #FB3B64;
-}
-
-.color-2 {
-  background-color: #08A6E4;
-}
-
-.color-3 {
-  background-color: #55DFB4;
-}
-
-.textColor-1 {
-  color: #FB3B64;
-}
-
-.textColor-2 {
-  color: #08A6E4;
-}
-
-.textColor-3 {
-  color: #55DFB4;
-}
-
 .data__circle {
   display: inline-block;
   border-radius: 50%;
@@ -261,6 +261,7 @@ body {
   color: #000000;
 }
 .plans__basic, .plans__professional, .plans__premium {
+  position: relative;
   width: 80%;
   border: 1px solid;
   border-radius: 18px;
@@ -352,13 +353,14 @@ body {
   text-align: left;
 }
 .plan__btn {
+  color: #FFFFFF;
   position: absolute;
   left: 25%;
   border: none;
   border-radius: 23px;
   width: 50%;
   padding: 12px 0;
-  top: 96%;
+  top: 90%;
 }
 
 .questions {
@@ -592,7 +594,7 @@ body {
     width: 100%;
   }
   .plans__basic, .plans__professional, .plans__premium {
-    padding: 50px 0;
+    padding: 5% 0;
     width: 30%;
   }
   .plans__basic .plan__pricing, .plans__professional .plan__pricing, .plans__premium .plan__pricing {
@@ -602,11 +604,10 @@ body {
     transform: translate(0, 0);
   }
   .plans__basic .plan__data, .plans__professional .plan__data, .plans__premium .plan__data {
-    margin: 20% 0 20% 20%;
+    margin: 15% 0 0 15%;
     display: block;
-    margin-left: 20%;
   }
-  .plans .plan__btn {
+  .plans__basic .plan__btn, .plans__professional .plan__btn, .plans__premium .plan__btn {
     top: 96%;
   }
   .questions {
@@ -634,7 +635,11 @@ body {
     grid-area: 1/3/4/4;
   }
   .footer {
+    text-align: start;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+  }
+  .footer__icons, .footer__text {
+    margin: 0;
   }
 }/*# sourceMappingURL=main.css.map */
