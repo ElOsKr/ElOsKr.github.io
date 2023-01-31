@@ -12,9 +12,12 @@
     <title>OxygenShop</title>
 </head>
 <body>
+    <!--Header de la página-->
     <header class="header">
         <h1 class="header__title">OXYGENShop</h1>
+        <!--Checkbox para poder realizar el menu desplegable-->
         <input type="checkbox" name="btn-desplegable" id="btn-desplegable" class="header__btn">
+        <!--Dos labels para cambiar la vista de apertura del menu-->
         <label for="btn-desplegable" class="header__open">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="20" fill="currentColor" class="bi bi-list header__icon" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
@@ -23,6 +26,7 @@
         <label for="btn-desplegable" class="header__close">
             <span>X</span>
         </label>
+        <!--lista desplegable-->
         <ul class="header__list">
             <li class="list-item"><a href="#">WHY US</a></li>
             <li class="list-item"><a href="#">BENEFITS</a></li>
@@ -30,7 +34,9 @@
             <li class="list-item"><a href="#">CONTACT</a></li>
         </ul>
     </header>
+    <!--Contenido principal de la pagina-->
     <main class="content">
+        <!--Seccion de introduccion-->
         <div class="introduction">
             <h1 class="introduction__title">
                 Sell More! 
@@ -43,6 +49,7 @@
             </button>
             <img src="img/background.png" alt="background" class="introduction__img">          
         </div>
+        <!--Seccion de estadisticas-->
         <div class="stadistics">
             <h1 class="stadistics__title">
                 The most popular sales platform in country
@@ -89,7 +96,9 @@
             </div>
         </div>
     </main>
+    <!--Seccion del apartado donda estan las cards-->
     <div class="cards">
+        <!--Carta con el macbook-->
         <div class="card">
              <img src="./img/macbook.png" alt="macbook" class="card__img img__macbook">
              <span class="card__macbook"></span>
@@ -100,6 +109,7 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde sed cumque numquam eum adipisci eius? Iure omnis modi atque ex!
              </p>
         </div>
+        <!--Carta con el movil-->
         <div class="card">
             <div class="card__phone">
                 <img src="./img/iPhone.png" alt="iPhone" class="card__img img__phone">
@@ -111,6 +121,7 @@
                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde sed cumque numquam eum adipisci eius? Iure omnis modi atque ex!
             </p>
        </div>
+       <!--Carta con la trompeta-->
        <div class="card">
             <h1 class="card__title">
                 Increase recognition your brand!
@@ -123,11 +134,12 @@
             <img src="./img/trumpet.png" alt="trumpet" class="img__trumpet">
         </div>
     </div>
+    <!--Seccion de los planes de pago-->
    <div class="plans">
         <h1 class="plans__title">
             Pricing
         </h1>
-
+        <!--Plan basico-->
         <div class="plans__basic">
             <div class="plan__pricing">
                 <div>
@@ -176,6 +188,7 @@
             </div>
             <button class="plan__btn color-1">Begin</button>
         </div>
+        <!--Plan profesional-->
         <div class="plans__professional">
             <div class="plan__pricing">
                 <div>
@@ -224,6 +237,7 @@
             </div>
             <button class="plan__btn color-2">Begin</button>
         </div>
+        <!--Plan premium-->
         <div class="plans__premium">
             <div class="plan__pricing">
                 <div>
@@ -273,6 +287,7 @@
             <button class="plan__btn color-3">Begin</button>
         </div>
    </div>
+   <!--Seccion de preguntas-->
    <div class="questions">
         <h1 class="questions__title">
             Any questions?
@@ -292,33 +307,34 @@
               </svg>
             <span>123 456 789</span>
         </p>
+        <!--Seccion del formulario-->
         <div class="questions__contact">
             <form class="contact__form">
-                
-                    <label for="username" class="form__username">
-                        Name
-                    </label>
-                    <br>
-                    <input type="text" name="username" id="username">
-                    <br>
-                    <label for="useremail" class="form_useremail">
-                        Email
-                    </label>
-                    <br>
-                    <input type="text" name="useremail" id="useremail">
-                    <br>
-                    <p class="form__check">
-                        <input type="checkbox" name="form__check" id="formcheck">
-                        <span>
-                            I hereby give consent for my personal data included in my application to be processed for the purposes of the recruitment process under the European Parliament’s and Council of the European Union Regulation on the Protection of Natural Persons as of 27 April 2016, with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (Data Protection Directive)
-                        </span>                        
-                    </p> 
-                    <button class="form__btn">
-                        Send
-                    </button>
-                </form>
+                <label for="username" class="form__username">
+                    Name
+                </label>
+                <br>
+                <input type="text" name="username" id="username">
+                <br>
+                <label for="useremail" class="form_useremail">
+                    Email
+                </label>
+                <br>
+                <input type="text" name="useremail" id="useremail">
+                <br>
+                <p class="form__check">
+                    <input type="checkbox" name="form__check" id="formcheck">
+                    <span>
+                        I hereby give consent for my personal data included in my application to be processed for the purposes of the recruitment process under the European Parliament’s and Council of the European Union Regulation on the Protection of Natural Persons as of 27 April 2016, with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (Data Protection Directive)
+                    </span>                        
+                </p> 
+                <button class="form__btn">
+                    Send
+                </button>
+            </form>
         </div>
    </div>
+   <!--Footer de la pagina-->
     <footer class="footer">
         <div class="footer__text">
             <h2 class="footer__title">
@@ -331,6 +347,7 @@
         <div class="footer__icons">
             <iconify-icon icon="entypo-social:twitter-with-circle" style="color: #55acee;" width="35" height="35"></iconify-icon>
             <iconify-icon icon="ic:baseline-facebook" style="color: #3b5998;" width="35" height="35"></iconify-icon>    
-        </footer>
+        </div>
+    </footer>
 </body>
 </html>

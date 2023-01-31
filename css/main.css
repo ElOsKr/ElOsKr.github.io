@@ -91,8 +91,7 @@ body {
   font-family: "Open Sans", sans-serif;
   list-style-type: none;
 }
-
-.list-item a {
+.header__list .list-item a {
   text-decoration: none;
   color: grey;
   font-weight: 700;
@@ -101,10 +100,10 @@ body {
   line-height: 15px;
   margin-left: 5%;
 }
-.list-item a:visited {
+.header__list .list-item a:visited {
   color: grey;
 }
-.list-item a:hover {
+.header__list .list-item a:hover {
   color: black;
 }
 
@@ -504,6 +503,10 @@ body {
   .stadistics__data {
     flex: 1;
   }
+  /*
+      Cartas ajustadas para vistas mayores de 1000px de width.
+      Accedo a cada una de las cartas con nth-child para darle su espacio en el grid
+  */
   .cards {
     display: grid;
     grid-template: 1fr 1fr 1fr/1fr 1fr 1fr;

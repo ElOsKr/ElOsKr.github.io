@@ -1,3 +1,4 @@
+//Variables de propiedades que suelo usar con frecuencia
 $main-font: Raleway, sans-serif;
 $secondary-font: 'Open Sans',sans-serif;
 $main-color:#08A6E4;
@@ -6,6 +7,7 @@ $color-2:$main-color;
 $color-3:#55DFB4;
 $min-width:320px;
 
+//Clases con colores para poner en el html
 .color-1{
     background-color: $color-1;
 }
@@ -35,7 +37,7 @@ $min-width:320px;
     padding: 0;
     box-sizing: border-box;
 }
-
+//Personalizacion del scrollbar de la pagina
 ::-webkit-scrollbar{
     width: 3px;
 }
@@ -57,7 +59,7 @@ body{
     background-color: #E8E9ED;
     overflow-x: hidden;
 }
-
+//Estilos para el header
 .header{
     $component:&;
     position: absolute;
@@ -108,31 +110,32 @@ body{
         text-align: left;   
         font-family: $secondary-font;
         list-style-type: none;
+
+        //Estilos de la lista del header
+        .list-item{
+            $primary-color:grey;
+            $secondary-color:black;
+            a{
+            text-decoration: none;  
+            color:$primary-color;
+            font-weight: 700;
+            letter-spacing: 3.28px;
+            font-size: 12px;
+            line-height: 15px;
+            margin-left: 5%;
+
+                &:visited{
+                    color: $primary-color;
+                }
+
+                &:hover{
+                    color:$secondary-color;
+                }
+            }
+        }
     }
 }
-
-.list-item{
-    $primary-color:grey;
-    $secondary-color:black;
-    a{
-      text-decoration: none;  
-      color:$primary-color;
-      font-weight: 700;
-      letter-spacing: 3.28px;
-      font-size: 12px;
-      line-height: 15px;
-      margin-left: 5%;
-
-        &:visited{
-            color: $primary-color;
-        }
-
-        &:hover{
-            color:$secondary-color;
-        }
-    }
-}
-
+//Posicionamiento relativo para el contenido de la pagina para el solapamiento del menu del header
 .content{
     position: relative;
     z-index: 1;
@@ -142,7 +145,7 @@ body{
     font-size: 16px;
     
 }
-
+//Estilos de los botones de introduccion y el boton del formulario
 .introduction__btn, .form__btn{
     border-radius:40px;
     width: min(80%,500px);
@@ -158,7 +161,7 @@ body{
         cursor: pointer;
     }    
 }
-
+//Estilos para la introduccion
 .introduction{
     &__title, &__description, &__btn{
         margin: 20px 0;
@@ -175,7 +178,7 @@ body{
         max-height: 600px;
     }
 }
-
+//Estilos de la seccion que muestra las estadisticas
 .stadistics{
     width: 100%;
     
@@ -188,7 +191,7 @@ body{
         font-weight: 300;
     }    
 }
-
+//Estilo de los circulos, iconos y texto de las estadisticas
 .data{
     &__circle{
         position: relative;
@@ -219,12 +222,12 @@ body{
         color: #A5A5A5;
     }
 }
-
+//Estilo del contenedor de las cartas
 .cards{
     color: black;
     text-align: center;
 }
-
+//Estilo de cada una de las cartas
 .card{
     text-align: left;
     margin: 20px auto 0px auto;
@@ -291,7 +294,7 @@ body{
         margin:0 auto;
     }
 }
-
+//Estilo del contenedor que contiene la imagen de la trompeta
 .card__trumpet{
     background-color: $color-3;
     width: 85%;
@@ -302,7 +305,7 @@ body{
         transform: scale(0.8, 0.8);
     }
 }
-
+//Estilos de los planes de pago
 .plans{
     background-color: #FFFFFF;
     padding-top: 30px;
@@ -358,7 +361,7 @@ body{
         font-weight: 400;
     }
 }
-
+//Estilo para la distribucion del contenido intetior de los planes
 .plan{
     &__pricing{
         display: table-cell;
@@ -425,7 +428,7 @@ body{
         top: 90%;
     }
 }
-
+//Estilo para la seccion de preguntas
 .questions{
     background-color: #FFFFFF;
     padding-top: 50px;
@@ -458,7 +461,7 @@ body{
         }
     }
 }
-
+//Estilo para la seccion del formulario
 .contact{
     &__number{
         font-family: $secondary-font;
@@ -509,9 +512,8 @@ body{
             margin-bottom: 30px;
         }
     }
-
 }
-
+//Estilos del footer
 .footer{
     padding-top: 20px;
     padding-bottom: 20px;
@@ -542,6 +544,7 @@ body{
 }
 
 @media only screen and (min-width: 1000px) {
+    //Header ajustado para vistas mayores de 1000px de width
     .header{
         position: relative;
         display: flex;
@@ -575,7 +578,7 @@ body{
             }
         }
     }
-
+    //Apartado de estadisticas ajustado para vistas mayores de 1000px de width
     .stadistics{
         display: flex;
         flex-direction: row;
@@ -588,8 +591,12 @@ body{
             flex:1;
         }
     }
-
+    /*
+        Cartas ajustadas para vistas mayores de 1000px de width.
+        Accedo a cada una de las cartas con nth-child para darle su espacio en el grid
+    */
     .cards{
+        
         display: grid;
         grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
         padding: 25px 10%;
@@ -683,7 +690,7 @@ body{
             }
         }
     }
-
+    //Apartado de planes de pago ajustado para vistas mayores de 1000px de width
     .plans{
         display: flex;
         align-items: center;
@@ -712,7 +719,7 @@ body{
             }
         }
     }
-
+    //Apartado de preguntas ajustado para vistas mayores de 1000px de width
     .questions{
         padding: 50px 10%;
         display: grid;
@@ -743,7 +750,7 @@ body{
         }
 
     }
-
+    //Footer ajustado para vistas mayores de 1000px de width
     .footer{
         text-align: start;
         &__icons, &__text{
