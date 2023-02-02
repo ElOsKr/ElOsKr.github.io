@@ -51,6 +51,7 @@ body,html{
     height: 100%;
 }
 
+
 body{
     font-family: $main-font;
     color:$main-color;
@@ -76,37 +77,14 @@ body{
     }
 
     &__btn{
-        display: none;
+        border:none;
+        color: $main-color;
+        background: none;     
     }
-
-    &__open, &__close{
-        margin-right: 20px;
-    }
-
-    &__close{
-        display: none;
-    }
-
-    &__btn:checked{
-        ~ #{$component}__open{
-            display: none;
-        }
-        
-        ~ #{$component}__close{
-            display: inline-block;
-            width: 25px;
-            height: 20px;
-            font-weight: bold;
-        }
-    
-        ~ #{$component}__list{
-            display: block;
-        }
-    } 
 
     &__list{
         margin-top: 20px;
-        display: none;
+        display: block;
         text-align: left;   
         font-family: $secondary-font;
         list-style-type: none;
@@ -134,6 +112,10 @@ body{
             }
         }
     }
+}
+//Clase para ocultar el header con javascript
+.oculto{
+    display: none;
 }
 //Posicionamiento relativo para el contenido de la pagina para el solapamiento del menu del header
 .content{
@@ -552,7 +534,7 @@ body{
         align-items: center;
         align-items: stretch;
 
-        &__open, &__close{
+        &__btn{
             display: none;
         }
 
