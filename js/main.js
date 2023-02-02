@@ -3,7 +3,7 @@ function cargarEventos() {
   document.getElementById("headerBtn").addEventListener("click", mobileMenu);
   window.addEventListener("scroll", percentageScroll);
   document.getElementById("returnTop").addEventListener("click", returnTop);
-  document.getElementById("formBtn").addEventListener("click",formCheck);
+  document.getElementById("contactForm").addEventListener("submit",formCheck);
 }
 
 function mobileMenu() {
@@ -30,6 +30,7 @@ function returnTop(){
 }
 
 async function formCheck(event){
+    event.preventDefault();
     let userName = document.getElementById("username");
     let userEmail = document.getElementById("useremail");
     let checkForm = document.getElementById("formcheck");
@@ -71,7 +72,6 @@ async function formCheck(event){
         if(response.ok){
             let jsonResponse = await response.json();
             console.log(jsonResponse);
-            event.preventDefault();
         }  
     }
 }
