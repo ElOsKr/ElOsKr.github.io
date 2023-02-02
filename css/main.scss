@@ -132,8 +132,8 @@ body{
     font-size: 16px;
     
 }
-//Estilos de los botones de introduccion y el boton del formulario
-.introduction__btn, .form__btn{
+//Estilos de los botones de introduccion, el boton del formulario y el boton de volver a la parte superior
+.introduction__btn, .form__btn, .return__top{
     border-radius:40px;
     width: min(80%,500px);
     padding: 20px 0;
@@ -148,6 +148,24 @@ body{
         cursor: pointer;
     }    
 }
+
+.return__top{
+    border-radius:40px;
+    width: min(80%,500px);
+    padding: 20px 0;
+    color: white;
+    background-color: $color-3;
+    border:none;
+    font-family: $secondary-font;
+    font-weight: 700;
+    box-shadow: 5px 10px 14px rgba(7, 230, 104, 0.29);
+    margin-bottom: 20px;
+
+    &:hover{
+        cursor: pointer;
+    }    
+}
+
 //Estilos para la introduccion
 .introduction{
     &__title, &__description, &__btn{
@@ -499,6 +517,11 @@ body{
             margin-bottom: 30px;
         }
     }
+}
+
+.return{
+    width: 100%;
+    background-color: #FFFFFF;
 }
 //Estilos del footer
 .footer{

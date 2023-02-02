@@ -110,7 +110,7 @@ body {
   font-size: 16px;
 }
 
-.introduction__btn, .form__btn {
+.introduction__btn, .form__btn, .return__top {
   border-radius: 40px;
   width: min(80%, 500px);
   padding: 20px 0;
@@ -121,7 +121,23 @@ body {
   font-weight: 700;
   box-shadow: 5px 10px 14px rgba(7, 172, 230, 0.29);
 }
-.introduction__btn:hover, .form__btn:hover {
+.introduction__btn:hover, .form__btn:hover, .return__top:hover {
+  cursor: pointer;
+}
+
+.return__top {
+  border-radius: 40px;
+  width: min(80%, 500px);
+  padding: 20px 0;
+  color: white;
+  background-color: #55DFB4;
+  border: none;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  box-shadow: 5px 10px 14px rgba(7, 230, 104, 0.29);
+  margin-bottom: 20px;
+}
+.return__top:hover {
   cursor: pointer;
 }
 
@@ -429,6 +445,11 @@ body {
   margin-left: 30%;
   width: min(50%, 300px);
   margin-bottom: 30px;
+}
+
+.return {
+  width: 100%;
+  background-color: #FFFFFF;
 }
 
 .footer {
