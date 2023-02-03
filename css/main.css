@@ -283,6 +283,10 @@ body {
   padding: 20px 10px;
   display: table;
 }
+.plans__divisas .divisas__select {
+  border: none;
+  border-bottom: 1px solid #08A6E4;
+}
 .plans__basic:hover, .plans__professional:hover, .plans__premium:hover {
   transform: scale(1.07, 1.07);
   border: 1px solid;
@@ -669,7 +673,7 @@ body {
     flex-wrap: wrap;
     padding: 20px 10%;
   }
-  .plans__title {
+  .plans__title, .plans__divisas {
     width: 100%;
   }
   .plans__basic, .plans__professional, .plans__premium {

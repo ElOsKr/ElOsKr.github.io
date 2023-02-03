@@ -2,7 +2,7 @@ document.addEventListener("readystatechange", cargarEventos, false);
 function cargarEventos() {
   document.getElementById("headerBtn").addEventListener("click", mobileMenu);
   window.addEventListener("scroll", percentageScroll);
-    console.log(sessionStorage.getItem("modal"));
+
   if(sessionStorage.getItem("modal") === null){
     window.addEventListener("scroll",percentageScrollModal);
     document.getElementById("modalClose").addEventListener("click",closeModal);
@@ -10,21 +10,28 @@ function cargarEventos() {
         if(event.key == "Escape"){
             closeModal();
         }
-    })
+    });
+
     document.getElementById("modalBackground").addEventListener("click",(event)=>{
         if("modalBackground" == event.target.id){
             closeModal();
         }
     });
+
     document.body.addEventListener("keypress",closeModal);
     document.getElementById("modalForm").addEventListener("submit",modalSuscribe);
   }
 
+  var profesionalPrice = Number(document.getElementsByClassName("plan__cost")[1].innerText.substring(2,4));
+  var premiumPrice = Number(document.getElementsByClassName("plan__cost")[2].innerText.substring(2,4));
+
+  document.getElementById("changeDivisa").addEventListener("change",()=>changeDivisa(profesionalPrice,premiumPrice));
   document.getElementById("returnTop").addEventListener("click", returnTop);
   document.getElementById("contactForm").addEventListener("submit",formCheck);
 }
 
 function mobileMenu() {
+
   let list = document.getElementById("headerList");
   if (list.classList.contains("oculto")) {
     list.classList.remove("oculto");
@@ -34,10 +41,12 @@ function mobileMenu() {
 }
 
 function percentageScroll() {
-  document.getElementById("percentageScroll").style.width = (window.scrollY * 100) / (document.body.offsetHeight - window.innerHeight) + "%";
+
+    document.getElementById("percentageScroll").style.width = (window.scrollY * 100) / (document.body.offsetHeight - window.innerHeight) + "%";
 }
 
 function returnTop(){
+
     setTimeout(()=>{
         window.scroll({
             top: 0,
@@ -48,6 +57,7 @@ function returnTop(){
 }
 
 async function formCheck(event){
+
     event.preventDefault();
     let userName = document.getElementById("username");
     let userEmail = document.getElementById("useremail");
@@ -87,6 +97,7 @@ async function formCheck(event){
                 'Content-type': 'application/json; charset=UTF-8',
             },
         });
+
         if(response.ok){
             let jsonResponse = await response.json();
             console.log(jsonResponse);
@@ -95,6 +106,7 @@ async function formCheck(event){
 }
 
 function percentageScrollModal (){
+
     let percentageScroll=(window.scrollY * 100) / (document.body.offsetHeight - window.innerHeight)
 
     if(percentageScroll>25){
@@ -105,6 +117,7 @@ function percentageScrollModal (){
 
 
 function openModal(){
+
     document.getElementById("modalBackground").style.visibility="visible";
     document.getElementById("modalBox").style.transitionDuration="1s";
     document.getElementById("modalBox").style.transform="translateY(25%)";
@@ -139,6 +152,7 @@ async function modalSuscribe(event){
                 'Content-type': 'application/json; charset=UTF-8',
             },
         });
+
         if(response.ok){
             let jsonResponse = await response.json();
             console.log(jsonResponse);
@@ -146,9 +160,38 @@ async function modalSuscribe(event){
             document.getElementById("modalBox").style.transitionDuration="0.5s";
             setTimeout(closeModal,500);
         }  
-
     }
+}
 
+async function changeDivisa(profesionalPrice,premiumPrice){
+    let selectDivisa = document.getElementById("changeDivisa");
 
+    for (let i = 0; i < selectDivisa.length; i++) {
+        if(selectDivisa[i].selected){
+            let response = await fetch("https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/usd.json");
+            let divisa = selectDivisa[i].value
+            if(response.ok){
+                let jsonResponse = await response.json();
+                let change = jsonResponse["usd"][divisa].toFixed(3);
+                let divisaPrint;
+                if(selectDivisa[i].value=="eur"){
+                    divisaPrint = "€";
+                }
+
+                if(selectDivisa[i].value=="gbp"){
+                    divisaPrint = "£";
+                }
+
+                if(selectDivisa[i].value=="usd"){
+                    divisaPrint = "$";
+                }
+                document.getElementsByClassName("plan__cost")[0].innerHTML= divisaPrint + " 0";
+                document.getElementsByClassName("plan__cost")[1].innerHTML=divisaPrint + " " + Math.round(profesionalPrice*change);
+                document.getElementsByClassName("plan__cost")[2].innerHTML=divisaPrint + " " + Math.round(premiumPrice*change);
+
+                divisaAux = selectDivisa[i].value;
+            }
+        }
+    }
 }
 
