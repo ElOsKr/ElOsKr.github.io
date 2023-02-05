@@ -293,6 +293,35 @@
             <button class="plan__btn color-3">Begin</button>
         </div>
    </div>
+   <!--Seccion del slider-->
+   <div class="slider">
+        <div class="slider__item active">
+            <img src="./img/slider__img1.jpg" alt="universe">
+        </div>
+        <div class="slider__item">
+            <img src="./img/slider__img2.jpg" alt="universe">
+        </div>
+        <div class="slider__item">
+            <img src="./img/slider__img3.jpg" alt="universe">
+        </div>
+        <div class="slider__item">
+            <img src="./img/slider__img4.jpg" alt="universe">
+        </div>
+        <div class="slider__item">
+            <img src="./img/slider__img5.jpg" alt="universe">
+        </div>
+        <div class="slider__btns">
+            <button id="prev" class="slider__btn">&#60;</button>
+            <button id="next" class="slider__btn">&#62;</button>
+        </div> 
+        <div class="slider__selection">
+            <div class="selection__item active"></div>
+            <div class="selection__item"></div>
+            <div class="selection__item"></div>
+            <div class="selection__item"></div>
+            <div class="selection__item"></div>
+        </div>
+   </div>
    <!--Seccion de preguntas-->
    <div class="questions">
         <h1 class="questions__title">
@@ -366,12 +395,12 @@
             <h1 class="modal__title">
                 Subscribe to ours newsletter
             </h1>
-                <form class="modal__form" id="modalForm">
-                    <label for="modalEmail">Email</label>
-                    <input type="email" name="modalEmail" id="modalEmail" class="modal__email">
-                    <p class="modal__error" id="modalError"></p>
-                    <input type="submit" value="Suscribe" name="modalSuscribe" id="modalSuscribe" class="modal__suscribe">
-                </form>
+            <form class="modal__form" id="modalForm">
+                <label for="modalEmail">Email</label>
+                <input type="email" name="modalEmail" id="modalEmail" class="modal__email">
+                <p class="modal__error" id="modalError"></p>
+                <input type="submit" value="Suscribe" name="modalSuscribe" id="modalSuscribe" class="modal__suscribe">
+            </form>
         </div>
     </div>
 </body>

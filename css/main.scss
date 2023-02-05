@@ -442,6 +442,73 @@ body{
         top: 90%;
     }
 }
+//Estilo para el slider
+.slider{
+    margin: 30px auto;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 300px;
+    &__item{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: none;
+
+
+        img{
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &.active{
+            display: block;
+        }
+    }
+
+    &__btns{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        button{
+            color: #FFFFFF;
+            font-size: 20px;
+            z-index: 100;
+            padding: 3px;
+            background-color: rgba(0,0,0,0.5);
+            border: none;
+            border-radius: 20px;
+            border: solid 1px white;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+    }
+
+    &__selection{
+        z-index: 100;
+        display: flex;
+        justify-content: center;
+
+        .selection__item{
+            z-index: 100;
+            background-color: #FFFFFF;
+            opacity: 0.5;
+            width: 10px;
+            height: 10px;
+            transform: translateY(-30px);
+            margin: 0 5px;
+            border-radius: 20px;
+            &.active{
+                opacity: 1;
+            }
+        }
+    }
+}
 //Estilo para la seccion de preguntas
 .questions{
     background-color: #FFFFFF;
@@ -806,6 +873,11 @@ body{
             }
         }
     }
+    //Apartado del slider ajustado para vistas mayores de 1000px de width
+    .slider{
+        width: 90%;
+        height: 600px;
+    } 
     //Apartado de preguntas ajustado para vistas mayores de 1000px de width
     .questions{
         padding: 50px 10%;

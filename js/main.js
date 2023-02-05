@@ -4,6 +4,7 @@ function cargarEventos() {
   window.addEventListener("scroll", percentageScroll);
 
   if(sessionStorage.getItem("modal") === null){
+    setInterval(openModal,5000)
     window.addEventListener("scroll",percentageScrollModal);
     document.getElementById("modalClose").addEventListener("click",closeModal);
     document.addEventListener("keydown",(event)=>{
@@ -24,6 +25,9 @@ function cargarEventos() {
 
   var profesionalPrice = Number(document.getElementsByClassName("plan__cost")[1].innerText.substring(2,4));
   var premiumPrice = Number(document.getElementsByClassName("plan__cost")[2].innerText.substring(2,4));
+
+  sliderNext();
+  sliderPrev();
 
   document.getElementById("changeDivisa").addEventListener("change",()=>changeDivisa(profesionalPrice,premiumPrice));
   document.getElementById("returnTop").addEventListener("click", returnTop);
@@ -188,10 +192,78 @@ async function changeDivisa(profesionalPrice,premiumPrice){
                 document.getElementsByClassName("plan__cost")[0].innerHTML= divisaPrint + " 0";
                 document.getElementsByClassName("plan__cost")[1].innerHTML=divisaPrint + " " + Math.round(profesionalPrice*change);
                 document.getElementsByClassName("plan__cost")[2].innerHTML=divisaPrint + " " + Math.round(premiumPrice*change);
-
-                divisaAux = selectDivisa[i].value;
             }
         }
     }
 }
 
+function sliderNext(){
+
+    let nextBtn = document.getElementById("next");
+    let sliderItems = Array.from(document.getElementsByClassName("slider__item"));
+    let sliderSlection = Array.from(document.getElementsByClassName("selection__item"));
+    let sliderLength = sliderItems.length;
+    let sliderItem = 0;
+
+    nextBtn.addEventListener("click",next) 
+    function next(){
+
+        sliderItem++;
+
+        sliderItems.forEach((item) =>{
+            item.classList.remove("active");
+        });
+        sliderSlection.forEach((selection) => {
+            selection.classList.remove("active");
+        });
+
+        if(sliderItem > (sliderLength - 1)){
+            sliderItem = 0;
+        }
+
+        sliderItems[sliderItem].classList.add("active");
+        sliderSlection[sliderItem].classList.add("active");
+    }
+
+    let repetition = () => {
+        setInterval(next,4000);
+    }
+
+    repetition();
+
+}
+
+function sliderPrev(){
+
+    let prevBtn = document.getElementById("prev");
+    let sliderItems = Array.from(document.getElementsByClassName("slider__item"));
+    let sliderSlection = Array.from(document.getElementsByClassName("selection__item"));
+    let sliderLength = sliderItems.length;
+    let sliderItem = 0;
+    prevBtn.addEventListener("click", ()=>{
+
+        sliderItem--;
+
+        sliderItems.forEach((item) =>{
+            item.classList.remove("active");
+        });
+        sliderSlection.forEach((selection) => {
+            selection.classList.remove("active");
+        });
+
+        if(sliderItem < 0){
+            sliderItem = sliderLength - 1;
+        }
+
+        sliderItems[sliderItem].classList.add("active");
+        sliderSlection[sliderItem].classList.add("active");
+    })
+}
+
+class Slider{
+
+    constructor(id){
+        this._id=id;
+    }
+
+}
