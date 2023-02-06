@@ -26,8 +26,7 @@ function cargarEventos() {
   var profesionalPrice = Number(document.getElementsByClassName("plan__cost")[1].innerText.substring(2,4));
   var premiumPrice = Number(document.getElementsByClassName("plan__cost")[2].innerText.substring(2,4));
 
-  sliderNext();
-  sliderPrev();
+  new Slider("slider");
 
   document.getElementById("changeDivisa").addEventListener("change",()=>changeDivisa(profesionalPrice,premiumPrice));
   document.getElementById("returnTop").addEventListener("click", returnTop);
@@ -197,73 +196,78 @@ async function changeDivisa(profesionalPrice,premiumPrice){
     }
 }
 
-function sliderNext(){
-
-    let nextBtn = document.getElementById("next");
-    let sliderItems = Array.from(document.getElementsByClassName("slider__item"));
-    let sliderSlection = Array.from(document.getElementsByClassName("selection__item"));
-    let sliderLength = sliderItems.length;
-    let sliderItem = 0;
-
-    nextBtn.addEventListener("click",next) 
-    function next(){
-
-        sliderItem++;
-
-        sliderItems.forEach((item) =>{
-            item.classList.remove("active");
-        });
-        sliderSlection.forEach((selection) => {
-            selection.classList.remove("active");
-        });
-
-        if(sliderItem > (sliderLength - 1)){
-            sliderItem = 0;
-        }
-
-        sliderItems[sliderItem].classList.add("active");
-        sliderSlection[sliderItem].classList.add("active");
-    }
-
-    let repetition = () => {
-        setInterval(next,4000);
-    }
-
-    repetition();
-
-}
-
-function sliderPrev(){
-
-    let prevBtn = document.getElementById("prev");
-    let sliderItems = Array.from(document.getElementsByClassName("slider__item"));
-    let sliderSlection = Array.from(document.getElementsByClassName("selection__item"));
-    let sliderLength = sliderItems.length;
-    let sliderItem = 0;
-    prevBtn.addEventListener("click", ()=>{
-
-        sliderItem--;
-
-        sliderItems.forEach((item) =>{
-            item.classList.remove("active");
-        });
-        sliderSlection.forEach((selection) => {
-            selection.classList.remove("active");
-        });
-
-        if(sliderItem < 0){
-            sliderItem = sliderLength - 1;
-        }
-
-        sliderItems[sliderItem].classList.add("active");
-        sliderSlection[sliderItem].classList.add("active");
-    })
-}
-
 class Slider{
 
     constructor(id){
-        this._id=id;
+        this.id = id;
+        this.prevBtn =  document.getElementById(`${id}Prev`);
+        this.nextBtn = document.getElementById(`${id}Next`);
+        this.sliderItems = Array.from(document.getElementsByClassName(`${id}__item`));
+        this.sliderSelection = Array.from(document.getElementsByClassName(`selection__item`));
+        this.sliderLength = this.sliderItems.length;
+        this.sliderItem = 0;
+        this.repetition;
+
+        this.nextBtn.addEventListener("click", event => this.nextFunction(event));
+        this.prevBtn.addEventListener("click", event => this.prevFunction(event));
+        this.repetitionFunction(event);
+        this.cancelSlide();
+        this.resumeSlide();
     }
 
+    nextFunction(){
+        this.sliderItems.forEach((item) =>{
+            item.classList.remove("active");
+        });
+        this.sliderSelection.forEach((selection) => {
+            selection.classList.remove("active");
+        });
+
+        this.sliderItem++;
+
+        if(this.sliderItem > (this.sliderLength - 1)){
+            this.sliderItem = 0;
+        }
+
+        this.sliderItems[this.sliderItem].classList.add("active");
+        this.sliderSelection[this.sliderItem].classList.add("active");
+
+    }
+
+    prevFunction(){
+
+        this.sliderItems.forEach((item) =>{
+            item.classList.remove("active");
+        });
+        this.sliderSelection.forEach((selection) => {
+            selection.classList.remove("active");
+        });
+
+        this.sliderItem--;
+
+        if(this.sliderItem < 0){
+            this.sliderItem = this.sliderLength - 1;
+        }
+
+        this.sliderItems[this.sliderItem].classList.add("active");
+        this.sliderSelection[this.sliderItem].classList.add("active");
+    }
+
+
+
+    repetitionFunction(){
+        this.repetition = setInterval(this.nextFunction.bind(this),4000);
+    }
+
+    cancelSlide(){
+        document.getElementById(`${this.id}`).addEventListener("mouseover", event => 
+            clearInterval(this.repetition))
+    }
+
+    resumeSlide(){
+        document.getElementById(`${this.id}`).addEventListener("mouseout", (event) => {
+            this.repetitionFunction(event);
+        })
+    
+    }
 }

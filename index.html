@@ -27,10 +27,10 @@
         </button>
         <!--lista desplegable-->
         <ul class="oculto header__list" id="headerList">
-            <li class="list-item"><a href="#">WHY US</a></li>
-            <li class="list-item"><a href="#">BENEFITS</a></li>
-            <li class="list-item"><a href="#">PRICES</a></li>
-            <li class="list-item"><a href="#">CONTACT</a></li>
+            <li class="list-item"><a href="#whyUs">WHY US</a></li>
+            <li class="list-item"><a href="#benefits">BENEFITS</a></li>
+            <li class="list-item"><a href="#prices">PRICES</a></li>
+            <li class="list-item"><a href="#contact">CONTACT</a></li>
         </ul>
     </header>
     <!--Contenido principal de la pagina-->
@@ -49,7 +49,7 @@
             <img src="img/background.png" alt="background" class="introduction__img">          
         </div>
         <!--Seccion de estadisticas-->
-        <div class="stadistics">
+        <div class="stadistics" id="whyUs">
             <h1 class="stadistics__title">
                 The most popular sales platform in country
             </h1>
@@ -96,7 +96,7 @@
         </div>
     </main>
     <!--Seccion del apartado donda estan las cards-->
-    <div class="cards">
+    <div class="cards" id="benefits">
         <!--Carta con el macbook-->
         <div class="card">
              <img src="./img/macbook.png" alt="macbook" class="card__img img__macbook">
@@ -134,7 +134,7 @@
         </div>
     </div>
     <!--Seccion de los planes de pago-->
-   <div class="plans">
+   <div class="plans" id="prices">
         <h1 class="plans__title">
             Pricing
         </h1>
@@ -294,7 +294,7 @@
         </div>
    </div>
    <!--Seccion del slider-->
-   <div class="slider">
+   <div class="slider" id="slider">
         <div class="slider__item active">
             <img src="./img/slider__img1.jpg" alt="universe">
         </div>
@@ -311,8 +311,8 @@
             <img src="./img/slider__img5.jpg" alt="universe">
         </div>
         <div class="slider__btns">
-            <button id="prev" class="slider__btn">&#60;</button>
-            <button id="next" class="slider__btn">&#62;</button>
+            <button id="sliderPrev" class="slider__btn">&#60;</button>
+            <button id="sliderNext" class="slider__btn">&#62;</button>
         </div> 
         <div class="slider__selection">
             <div class="selection__item active"></div>
@@ -323,7 +323,7 @@
         </div>
    </div>
    <!--Seccion de preguntas-->
-   <div class="questions">
+   <div class="questions" id="contact">
         <h1 class="questions__title">
             Any questions?
         </h1>
@@ -373,7 +373,7 @@
         </button>
    </div>
    <!--Footer de la pagina-->
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="footer__text">
             <h2 class="footer__title">
                 OXYGENShop
@@ -383,8 +383,8 @@
             </p>            
         </div>
         <div class="footer__icons">
-            <iconify-icon icon="entypo-social:twitter-with-circle" style="color: #55acee;" width="35" height="35"></iconify-icon>
-            <iconify-icon icon="ic:baseline-facebook" style="color: #3b5998;" width="35" height="35"></iconify-icon>    
+            <a href="https://twitter.com/Twitter"><iconify-icon icon="entypo-social:twitter-with-circle" style="color: #55acee;" width="35" height="35"></iconify-icon></a>
+            <a href="https://www.facebook.com/"><iconify-icon icon="ic:baseline-facebook" style="color: #3b5998;" width="35" height="35"></iconify-icon></a>
         </div>
     </footer>
     <div class="modal__background" id="modalBackground">
