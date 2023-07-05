@@ -134,7 +134,7 @@ body{
     
 }
 //Estilos de los botones de introduccion, el boton del formulario y el boton de volver a la parte superior
-.introduction__btn, .form__btn, .return__top{
+.introduction__btn, .form__btn{
     border-radius:40px;
     width: min(80%,500px);
     padding: 20px 0;
@@ -151,15 +151,17 @@ body{
 }
 
 .return__top{
-    border-radius:40px;
-    width: min(80%,500px);
-    padding: 20px 0;
+    background-color: $main-color;
+    position: relative;
+    font-size: 40px;
+    border-radius:50%;
+    width: auto;
+    padding: 5px 20px;
     color: white;
-    background-color: $color-3;
     border:none;
     font-family: $secondary-font;
     font-weight: 700;
-    box-shadow: 5px 10px 14px rgba(7, 230, 104, 0.29);
+    box-shadow: 5px 10px 14px rgba(0, 106, 255, 0.509);
     margin-bottom: 20px;
 
     &:hover{
@@ -444,11 +446,12 @@ body{
         width: 50%;
         padding: 12px 0;
         top: 90%;
+        cursor: pointer;
     }
 }
 //Estilo para el slider
 .slider{
-    margin: 30px auto;
+    margin: 0 auto;
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -639,7 +642,7 @@ body{
     &__background{
         visibility: hidden;
         position: fixed;
-        background: rgba(0, 0, 0, 0.7);
+        background: rgba(0, 0, 0, 0.8);
         z-index: 100;
         bottom: 0;
         left: 0;
@@ -650,9 +653,10 @@ body{
     &__box{
         position: relative;
         background-color: #FFFFFF;
-        width: 60%;
-        padding: 30px 10px;
-        margin: 0 auto;
+        width: 80%;
+        max-width: 800px;
+        padding: 50px 10px;
+        margin: 100px auto;
 
         display: flex;
         flex-direction: column;
@@ -670,6 +674,7 @@ body{
         width: 25px;
         height: 25px;
         background: none;
+        cursor: pointer;
     }
 
     &__email{
@@ -683,6 +688,7 @@ body{
     &__suscribe{
         border-radius:40px;
         width: 70%;
+        max-width: 300px;
         padding: 10px 0;
         color: white;
         background-color: $color-1;
@@ -753,8 +759,10 @@ body{
         Cartas ajustadas para vistas mayores de 1000px de width.
         Accedo a cada una de las cartas con nth-child para darle su espacio en el grid
     */
+    .card{
+        height: 300px;
+    }
     .cards{
-        
         display: grid;
         grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
         padding: 25px 10%;
@@ -769,16 +777,23 @@ body{
             grid-area: 1 / 1 / 2 / 4;
             display: grid;
             grid-template: 1fr 1fr / 1fr 1fr;
-            column-gap: 15%;
+            column-gap: 100px;
+            position: relative;
+            justify-content: center;
             .img__macbook{
                 grid-area: 1 / 2 / 3 / 3;
+                height: 168px;
+                width: 275px;
+                position: relative;
+                justify-self: end;
+                margin-right: 150px;
             }
 
             .card__macbook{
                 grid-area: 1 / 2 / 3 / 3;
                 width: 100px;
                 height: 100px;
-                right: 15%;
+                right: 80px;
                 border-radius: 20px;
                 transform: rotate(60deg);
             }
@@ -802,13 +817,16 @@ body{
             grid-area: 2 / 1 / 3 / 4;
             display: grid;
             grid-template: 1fr 2fr / 1fr 2fr;
-            column-gap: 25%;
+            column-gap: 250px;
             align-content: center;
+            position: relative;
 
             .img__phone{
-                width: 250px;
-                height: 200px;
-                left: 15%;
+                max-width: 255px;
+                max-height: 200px;
+                position: relative;
+                left: 20px;
+                top: 20px;
             }
 
             .card__phone{
@@ -853,7 +871,7 @@ body{
         display: flex;
         align-items: center;
         flex-wrap: wrap;
-        padding: 20px 10%;
+        padding: 40px 10%;
         &__title, &__divisas{
             width: 100%;
         }
@@ -880,7 +898,7 @@ body{
     }
     //Apartado del slider ajustado para vistas mayores de 1000px de width
     .slider{
-        width: 90%;
+        margin: 0 auto;
         height: 600px;
     } 
     //Apartado de preguntas ajustado para vistas mayores de 1000px de width

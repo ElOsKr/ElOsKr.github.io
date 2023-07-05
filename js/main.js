@@ -141,7 +141,7 @@ async function modalSuscribe(event){
 
     if(!regEx.test(modalEmail.value)){
         modalEmail.style.borderColor = "red";
-        modalError.innerHTML="Error en el correo";
+        modalError.innerHTML="Mail error";
     }else{
         modalError.innerHTML="";
         modalEmail.style.borderColor = "#95989A";

@@ -111,7 +111,7 @@ body {
   font-size: 16px;
 }
 
-.introduction__btn, .form__btn, .return__top {
+.introduction__btn, .form__btn {
   border-radius: 40px;
   width: min(80%, 500px);
   padding: 20px 0;
@@ -122,20 +122,22 @@ body {
   font-weight: 700;
   box-shadow: 5px 10px 14px rgba(7, 172, 230, 0.29);
 }
-.introduction__btn:hover, .form__btn:hover, .return__top:hover {
+.introduction__btn:hover, .form__btn:hover {
   cursor: pointer;
 }
 
 .return__top {
-  border-radius: 40px;
-  width: min(80%, 500px);
-  padding: 20px 0;
+  background-color: #08A6E4;
+  position: relative;
+  font-size: 40px;
+  border-radius: 50%;
+  width: auto;
+  padding: 5px 20px;
   color: white;
-  background-color: #55DFB4;
   border: none;
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
-  box-shadow: 5px 10px 14px rgba(7, 230, 104, 0.29);
+  box-shadow: 5px 10px 14px rgba(0, 106, 255, 0.509);
   margin-bottom: 20px;
 }
 .return__top:hover {
@@ -381,10 +383,11 @@ body {
   width: 50%;
   padding: 12px 0;
   top: 90%;
+  cursor: pointer;
 }
 
 .slider {
-  margin: 30px auto;
+  margin: 0 auto;
   position: relative;
   width: 100%;
   overflow: hidden;
@@ -551,7 +554,7 @@ body {
 .modal__background {
   visibility: hidden;
   position: fixed;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   z-index: 100;
   bottom: 0;
   left: 0;
@@ -561,9 +564,10 @@ body {
 .modal__box {
   position: relative;
   background-color: #FFFFFF;
-  width: 60%;
-  padding: 30px 10px;
-  margin: 0 auto;
+  width: 80%;
+  max-width: 800px;
+  padding: 50px 10px;
+  margin: 100px auto;
   display: flex;
   flex-direction: column;
   color: #FB3B64;
@@ -579,6 +583,7 @@ body {
   width: 25px;
   height: 25px;
   background: none;
+  cursor: pointer;
 }
 .modal__email {
   margin-bottom: 20px;
@@ -590,6 +595,7 @@ body {
 .modal__suscribe {
   border-radius: 40px;
   width: 70%;
+  max-width: 300px;
   padding: 10px 0;
   color: white;
   background-color: #FB3B64;
@@ -651,6 +657,9 @@ body {
       Cartas ajustadas para vistas mayores de 1000px de width.
       Accedo a cada una de las cartas con nth-child para darle su espacio en el grid
   */
+  .card {
+    height: 300px;
+  }
   .cards {
     display: grid;
     grid-template: 1fr 1fr 1fr/1fr 1fr 1fr;
@@ -667,17 +676,24 @@ body {
     grid-area: 1/1/2/4;
     display: grid;
     grid-template: 1fr 1fr/1fr 1fr;
-    -moz-column-gap: 15%;
-         column-gap: 15%;
+    -moz-column-gap: 100px;
+         column-gap: 100px;
+    position: relative;
+    justify-content: center;
   }
   .cards .card:nth-child(1) .img__macbook {
     grid-area: 1/2/3/3;
+    height: 168px;
+    width: 275px;
+    position: relative;
+    justify-self: end;
+    margin-right: 150px;
   }
   .cards .card:nth-child(1) .card__macbook {
     grid-area: 1/2/3/3;
     width: 100px;
     height: 100px;
-    right: 15%;
+    right: 80px;
     border-radius: 20px;
     transform: rotate(60deg);
   }
@@ -695,14 +711,17 @@ body {
     grid-area: 2/1/3/4;
     display: grid;
     grid-template: 1fr 2fr/1fr 2fr;
-    -moz-column-gap: 25%;
-         column-gap: 25%;
+    -moz-column-gap: 250px;
+         column-gap: 250px;
     align-content: center;
+    position: relative;
   }
   .cards .card:nth-child(2) .img__phone {
-    width: 250px;
-    height: 200px;
-    left: 15%;
+    max-width: 255px;
+    max-height: 200px;
+    position: relative;
+    left: 20px;
+    top: 20px;
   }
   .cards .card:nth-child(2) .card__phone {
     grid-area: 1/1/3/2;
@@ -738,7 +757,7 @@ body {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    padding: 20px 10%;
+    padding: 40px 10%;
   }
   .plans__title, .plans__divisas {
     width: 100%;
@@ -761,7 +780,7 @@ body {
     top: 96%;
   }
   .slider {
-    width: 90%;
+    margin: 0 auto;
     height: 600px;
   }
   .questions {
